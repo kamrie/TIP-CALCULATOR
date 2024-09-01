@@ -37,12 +37,24 @@ function solve(){
     // Next divide total amount number of people and add it to amtPercent
 
        
-    let amtPerct = tip / 100 * amt / ppl
-    let amtPerPerson = amt / ppl + amtPerct
-
+    let amtPerct =  amt / ppl * tip / 100 ;
+    let amtPerPerson = amt / ppl + amtPerct;
     console.log(amtPerPerson)
-    setTimeout(()=>{
+
+    if(isNaN(amtPerPerson)){
+        document.getElementById('result').innerText  = "" ; //It returns NaN If nothing is inputted so I handled it here.
+        return                                           
+    }
+    // Update the result display area
+    document.getElementById('result').innerText = `Each person should pay: $${amtPerPerson.toFixed(2)}`;
+      setTimeout(()=>{
         error.innerHTML=""
     }, 2000)
+    
+    setTimeout(()=>{
+        document.getElementById('result').innerText=""
+    }, 2000)
+
+  
 
 }

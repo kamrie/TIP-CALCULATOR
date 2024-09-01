@@ -6,3 +6,8 @@
     font-family: 'Trebuchet MS', sans-serif;
     background-image: url("table.png");
 }
+
+#result {
+    font-weight: bold;
+    color: #2a9d8f; /* A different color to make it stand out */
+}
